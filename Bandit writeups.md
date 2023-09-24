@@ -19,4 +19,16 @@ level 8:1.used ls -alps command to get all the files listed and found the "data.
         2.used the cat command to get a whole list.
         3.then i read about strings command, found that it sorts out the word u mention with it
         4. i used it with grep "strings data.txt | grep "millionth" and got the password next to the word
+  password:
+
+level 9:1.used ls to find all fles, found data.txt
+        2.used cat data.txt to read te contents and inside was just a huge text paragraph
+        3.then i found that those were duplicate passwords and so i leanred about the "sort" command given in the 
+          hint, and used it( sort data.txt), this sorted all alike passwords together
+        4. then i found one password which was only repeated once, which ultimatly was the password
+password:
+
+level 10:
+        
+        
 
