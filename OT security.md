@@ -17,7 +17,7 @@
 - but now , IT-OT convergence is happening, which gives arise to new problems of attacks, since they r in the same envirounment
 
   ## Threat landscape:
-- there r many types of threats that can be made.
+- there are many types of threats that can be made.
 - ransomware and malware is commonly used, malware can distrupt OT systems and their processess, and this can be used for ransom.
 - insider attacks are usually seen within IT-OT envirnoments,people with malicious intent in IT can distrupt or gain info from the OT envirounments.
 - due to lack of patch management, outdated systems r easily atatcked
