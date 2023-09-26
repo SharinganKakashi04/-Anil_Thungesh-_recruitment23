@@ -1,4 +1,4 @@
-# BANDIT OVER THE WIRE, WRITEUPS By ANIL THUNGESH RK, S1 EAC
+# BANDIT OVER THE WIRE WRITEUPS                                               
 
 It took me awhile to actually install linux. and i used it as a VM,
 Oracle VM Virtualbox, i installed Kali linux and used it to do the tasks
@@ -112,12 +112,29 @@ password:
 - logged into bandit 15, using the password :jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
 - after reading about nc command and ssl, i used "ncat --ssl localhost 30001"
 - and then got the password:JQttfApK4SeyHwDlI9SXGR50qclOAil1
-## level 16-17
-- 
-## level 17-18
-## level 18-19
+## level 16-17-18:
+- logged in bandit16
+- The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000.
+- so i used the nmap command"nmap localhost -p 31000-32000, and a column with port info popped
+- the port 31790 was open, so i used ncat --ssl localhost 31790 , which shows a huge private key, i stored the key in vim, used chmod 400 (name) and then used ssh command back to enter into the bandit 17
+- got into bandit17
+- using diff command formt the hint, i got the new password
+
+## level 18-19:
+- using ssh -t bandit18@bandit.labs.overthewire.org -p 2220/bin/sh logged into the pseudo server
+- using ls, found readme file,and cat readme yeilded the password
+ 
 ## level 19-20
-## level 20-21
+- after loggin into bandit 19, i ran ls, saw file bandit20-do
+- so to excute the file i used hint "./ bandit20-do command
+- the output came, that i should run it as an new different user
+- so i used ./bandit-do id and was able to see its info
+- since the password was in /etc/bandit_pass/ idecided to run the cat address since only bandit 20 can read it and got the password
+## level 20-21:
+- There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument
+- i ran the steuid command and for the second i tried connecting to my own network to see if it wokrs
+- cat /etc/bandit_pass/bandit20 | nc -1 localhost -p 1234
+- this connectes the server to level 20 and then we use./suconnect 1234 to get the password, and the other password is in the new terminal opened
 ## level 21-22
 ## level 22-23
 ## level 23-24
