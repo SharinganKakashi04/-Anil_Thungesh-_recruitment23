@@ -11,3 +11,11 @@ some basic tags that i learned
 
 ## CSS
 used codeacademy to learn
+
+# PICOCTF:
+## Powercookie:
+- first i read about cookies and their functions, then leaned how to mmodify them
+- opened the the website given the the task and then inspected, which gave me access to the html and css code
+- then in Application tab > cookies > i was able to see that the value of the cookie was 0, which means it is a false value
+- once i changed the valule to 1 and refreshed the page, i got the flag
+- 
