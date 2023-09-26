@@ -29,3 +29,28 @@ channel, on the other hand, communicates with the WPA supplicant process in user
       - CAN
   - level 2:recevier breakdown, more specific identifying threats
   - examples, bluez, wpa_supplicant, hsi, udev,kvaser driver
+
+## Chapter 2:BUS protocols
+these r the common bus protocols used in vehic,le communications. bus protocols govern and transfer packets through network of the vehicle.CAN bus is the most used. the CAN bus, exists in a standard
+location on all vehicles: on the OBD-II connector.critical vehicle communications like rpm  management and breaking happens on high speed bus lines, while no so critical communications happen through low speed ones
+### CAN BUS:
+- it is a simple protocol used in cars.
+- Modern vehicles are full of little embedded systems and electronic control units (ECUs) that can communicate using the CAN protocol
+- CAN runs on two wires: CAN high (CANH) and CAN low (CANL).
+CAN uses differential signaling
+### The OBD-II Connector:
+- Many vehicles come equipped with an OBD-II connector, also known as the
+diagnostic link connector (DLC), which communicates with the vehicle’s internal network.
+
+after this the CAN bus packet layout was epxlained
+- they contain 4 main elements:
+     - Arbitration ID
+     - Identifier extension(IDE) - 0 bit for standard CAN
+     - data length code(DLC)
+     - data
+  ### ISO-TP protocol:
+  - ISO 15765-2, also known as ISO-TP, is a standard for sending packets over
+the CAN bus that extends the 8-byte CAN limit to support up to 4095 bytes
+20 Chapter 2
+by chaining CAN packets together
+  
