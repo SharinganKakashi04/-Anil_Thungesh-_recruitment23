@@ -53,4 +53,7 @@ after this the CAN bus packet layout was epxlained
 the CAN bus that extends the 8-byte CAN limit to support up to 4095 bytes
 20 Chapter 2
 by chaining CAN packets together
+
+lack of time so im ending it here
+
   
