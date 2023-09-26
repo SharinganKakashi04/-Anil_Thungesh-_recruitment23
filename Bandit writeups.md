@@ -9,47 +9,47 @@ format of connecting to the port, once i found that out i was able to
 get into it(ssh bandit0@bandit.labs.overthewire.org) with the password
 bandit0 PASSWORD FOR LEVEL 0:Bandit0
 
-## level 1:
+## level 0- 1:
 - logged into bandit0 server, using the password bandit0 given
 - the password was supposedly stored in a readme file
 - searched for the readme file using ls command
 - then used cat command to read the contents, and inside was the password: NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
-## level 2:
+## level 1-2:
 - logged into bandit 1 server using the previously obtained password
 - the password was stored in a file called -located in home directory
 - searched for the file using ls command
 - then used cat "./-" to read the file since it has a hyphen, and got the password:rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
-## level 3:
+## level 2-3:
 - logged into bandit 2 server using the periously obtained password.
 - password was stored in a file called spaces in this filename.
 - searched for the file using ls command
 - used cat'spaces in this filename' to get the pasword:aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
-## level 4:
+## level 3-4:
 - logged into bandit3 server
 - password was stored in a hidden file in the inhere directory
 - first, i changed my directory to inhere, by cd inhere
 - then listed the contents by ls -al
 - then after seeing the file, i typed cat .hidden to get the password:2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
-## level 5:
+## level 4-5:
 - logged into bandit4 server
 - password for the next level is stored in the only human-readable file in the inhere directory
 - used cd inhere, and ls to list all the files in the inhere
 - read a bit about find command, and found that it can show what type of data is within the file
 - used find . -type f | xargs file and foound that file07 had ASCII text
 - then used cat ./-file07 and got the password:lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
-## level 6:
+## level 5-6:
 - logged into bandit 5 server
 - The password for the next level is stored in a file somewhere under the inhere directory, under conditions,human-readable,1033 bytes in size,not executable
 - since i had read about the find command before, i was able to sort and file the file by using conditions
 - after ls, and cd inhere to get into the dirrectory, i used the conditions, find . -type f -size 1033c(bytes) and i got the file
 - used cat command on the file foudn the password:P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
-## level 7:
+## level 6-7:
 - logged into bandit 6
 - The password for the next level is stored somewhere on the server, with the condtions, owned by bandit7, owned by group bandit 6, and 33 bytes
 - since its anywhere on the server, i used "find /" to search the entire system, then continued with "find / -type f -user bandit7 -group bandit6 -size 33c
 - then it displayed a lot of files, where on of the files had the name "password in it
 - used cat on it and got the password:z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
-## level 8:
+## level 7-8:
 - logged into bandit 7
 - used ls -alps command to get all the files listed and found the "data.txt".
 - used the cat command to get a whole list.
@@ -57,7 +57,7 @@ bandit0 PASSWORD FOR LEVEL 0:Bandit0
 - i used it with grep "strings data.txt | grep "millionth" and got the password next to the word.
   password:
 
-## level 9:
+## level 8-9:
 - logged into bandit 8
 - used ls to find all fles, found data.txt
 - used cat data.txt to read te contents and inside was just a huge text paragraph
@@ -66,7 +66,7 @@ bandit0 PASSWORD FOR LEVEL 0:Bandit0
 -  then i found one password which was only repeated once, which ultimatly was the password
 password:
 
-## level 10:
+## level 9-10:
 - logged into bandit 9
 - The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
 - since "="is special condition, i greped it with strings
@@ -135,13 +135,23 @@ password:
 - i ran the steuid command and for the second i tried connecting to my own network to see if it wokrs
 - cat /etc/bandit_pass/bandit20 | nc -1 localhost -p 1234
 - this connectes the server to level 20 and then we use./suconnect 1234 to get the password, and the other password is in the new terminal opened
-## level 21-22
-## level 22-23
-## level 23-24
+## level 21-22:
+- According to the hint, there is a configuration for a cron job on "/etc/cron.d/" that will help us.Cron is a program that will run a specific command or script at a specific time or intervals of time.
+- i used cd and then ls on /etc/cron.d/
+-  I saw multiple file but I assumed that we have to look at the file named "cronjob_bandit22" since I have to get bandit22 password
+-  I used "cat cronjob_bandit22" to see what the cron job is doing I saw that it is executing a bash script at every minute of every hour as explained by the stars in the beginning.
+-  since there is *** in the script will run every minute. I "cd" into the "/usr/bin/" folder and read the bash file using "cat"
+-  The script seems to be assigning the text in the password file bandit22 as that content in the "t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv" file inside the "/tmp" folder. I ran the "cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv" command and I received the password for the next level.
+## level 22-23:
+- same as the previous one, there is a cron job configuration on the "/etc/cron.d" folder.
+- I then "cd" into the "/usr/bin/" folder "cat" the file to see what it does.
+- According to this script it saves the name of the user running the script which according to the hint is bandit23 to the "myname" variable. It then runs an "echo" command
+- this sends a string which s=is then hashed and pipes the info by cut command
+- Once this part finished it saves the hash to a variable named "mytarget", the hash is 8ca319486bfbbc3663ea0fbe81326349. The next part of the script is that it copies the password for bandit23 in the folder "/tmp/" in file "mytarget". I then "cat /tmp/8ca319486bfbbc3663ea0fbe81326349" which returns the password to the next level.
+## level 23-24:
+- from this it is getting really tough to explain, and due to lack of time ill end it here
 ## level 24-25
-## level 25-26
-## level 26-27
-## level 27-28
+
 
         
         
