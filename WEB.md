@@ -10,7 +10,9 @@ some basic tags that i learned
   , etc, and with the help of these i was able to build a simple portfolio
 
 ## CSS
-used codeacademy to learn
+- used codeacademy to learn
+- css is basically used to modify the style of the site, can be used in html
+- 
 
 # PICOCTF:
 ## Powercookie:
@@ -18,4 +20,15 @@ used codeacademy to learn
 - opened the the website given the the task and then inspected, which gave me access to the html and css code
 - then in Application tab > cookies > i was able to see that the value of the cookie was 0, which means it is a false value
 - once i changed the valule to 1 and refreshed the page, i got the flag
-- 
+
+## SQL Direct:
+- first i connected to the sql link provided in the question and entered the pasword and got in
+- using help command i was able to see different commands that i can use
+- so to modify a database, i need a command that could list the database and that was \l and \c makes us select our database as pico
+- dt listed all the tables in the database, which showed flag as one of them
+- and after using select * from flags, i got the flag
+
+## Java code analysis
+- downloaded the souce code and accessed the folder, under the pico folder, found the code
+- found script generator, then logged into the site given and user and password
+- after using this i was stuck, i was not able to proceed
