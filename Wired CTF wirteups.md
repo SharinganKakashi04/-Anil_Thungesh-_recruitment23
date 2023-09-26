@@ -110,6 +110,7 @@ DOTS AND DASHES:
 2.using a youtube video which showed sound for each aphabet into morse code, i decoded and found the flag
 3. i believe it was the meme"it is what it is"
 
+MAY HAVE MISSED FEW CHALLENGES, I DIDNT TAKE SS OF ALL OF THEM
 
 
 
