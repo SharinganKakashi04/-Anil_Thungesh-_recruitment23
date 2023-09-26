@@ -55,5 +55,5 @@ the CAN bus that extends the 8-byte CAN limit to support up to 4095 bytes
 by chaining CAN packets together
 
 lack of time so im ending it here
-
+ have setup icsim in linux, but havent tried can utils yet
   
